@@ -1,0 +1,20 @@
+<div class="container mb-3 border" id = "banner">
+<h1><%= @restaurant.name %></h1>
+</div>
+
+<div class="container">
+  <p><strong>Category:</strong> <%= @restaurant.category %></p>
+  <p><strong>Address:</strong> <%= @restaurant.address %></p>
+  <p><strong>Phone number:</strong> <%= @restaurant.phone_number %></p>
+</div>
+
+<div class="container">
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item"><em><%= review.content %></em></li>
+    <% end %>
+  </ul>
+</div>
+<div class="container mt-3">
+<%= link_to "Add a review" , new_restaurant_review_path(@restaurant) %> || <%= link_to "Homepage", restaurants_path %>
+</div>

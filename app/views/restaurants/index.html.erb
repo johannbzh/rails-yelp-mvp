@@ -1,0 +1,14 @@
+<div class="container d-flex justify-content-between mb-3 border" id = "banner">
+<h1>YELP MVP</h1>
+<%= link_to "Add a new restaurant", new_restaurant_path %>
+</div>
+
+
+<div class="container">
+  <% @restaurants.each do |r| %>
+    <li><%= link_to r.name, restaurant_path(r) %></li>
+      <hr>
+  <% end %>
+</div>
+
+
